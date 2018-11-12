@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  <span>Sigepo Proyectos</span>
+  <div>
+      <button mat-button [matMenuTriggerFor]="Proyec">Proyecto</button>
+      <mat-menu #Proyec="matMenu">
+          <a mat-menu-item href="agregar" >Crear</a>
+          <a mat-menu-item href="agregar" >Actualizar</a>
+          <a mat-menu-item href="agregar" >Avances</a>
+          <a mat-menu-item href="agregar" >borrar</a>
+      </mat-menu>
+  </div>
+  <div>
+      <button mat-button [matMenuTriggerFor]="usuario">Configuación personal</button>
+      <mat-menu #usuario="matMenu">
+          <a mat-menu-item href="agregar" >Actualizar</a>
+          <a mat-menu-item href="agregar" >Actualizar</a>
+           </mat-menu>
+  </div>
+
+  <div>
+      <button mat-button [matMenuTriggerFor]="admi">Configuración global</button>
+      <mat-menu #admi="matMenu">
+          <a mat-menu-item href="agregar" >Actualizar</a>
+          <a mat-menu-item href="agregar" >Actualizar</a>
+      </mat-menu>
+  </div>
+
+  <span class="example-spacer"></span>
+
+  <div class="container" >
+    <mat-form-field class="example-form-field">
+      <input matInput type="text" placeholder="Buscar" [(ngModel)]="value">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+
+  </div>
+
+    <button mat-mini-fab [matMenuTriggerFor]="menu" color="primary">
+      <mat-icon >account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Usuario</button>
+        <a mat-menu-item href="agregar" >Actualizar</a>
+      </mat-menu>
+  </mat-toolbar-row>
+
+
+</mat-toolbar>
